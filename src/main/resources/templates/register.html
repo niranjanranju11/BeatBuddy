@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <style>
+        body {
+          font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ecf0f1;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: left;
+        }
+
+        h1 {
+            color: #000a07;
+            margin-bottom: 20px;
+            font-family: serif; 
+            
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: rgb(0, 128, 192);
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .radio-group {
+            margin-bottom: 16px;
+        }
+
+        .radio-group label {
+            display: inline-block;
+            margin-right: 20px;
+            color: #4caf50;
+            cursor: pointer;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form action="/register" method="post">
+        <h1>Create Account</h1>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <label>Gender:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+        </div>
+
+        <label>Role:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="role" value="admin"> Admin</label>
+            <label><input type="radio" name="role" value="customer"> Customer</label>
+        </div>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address"></textarea>
+
+        <input type="submit" value="CREATE ACCOUNT">
+
+        <p class="quote">"Unlock the door to a world of possibilities. Create your account now!"</p>
+    </form>
+</body>
+</html>
