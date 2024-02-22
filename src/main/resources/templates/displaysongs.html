@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Song List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        center {
+            text-align: center;
+        }
+
+        h1 {
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 90%; /* Increased table width */
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        td audio {
+            display: flex;
+            align-items: center;
+        }
+
+        td audio audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Displaying all the Songs</h1>
+        <table border="1">
+            <tr>
+                <th>Song Name</th>
+                <th>Song Artist</th>
+                <th>Song Genre</th>
+                <th>Song Link</th>
+            </tr>
+            <tr th:each="songlist : ${songlist}">
+                <td th:text="${songlist.name}"></td>
+                <td th:text="${songlist.artist}"></td>
+                <td th:text="${songlist.genre}"></td>
+                <td>
+                    <audio controls>
+                        <source th:src=${songlist.link} type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
